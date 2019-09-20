@@ -10,7 +10,6 @@ const production = {
   login: 'login',
   limit: "permission/queryUserPermission",
   wechatApiGetAppName: limit + "SummaryApi/schedule", //h5测试ktp
-
 }
 
 //开发
