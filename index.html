@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="shortcut icon" href="static/favicon.ico" />
+  <!-- <link href='http://cdn.webfont.youziku.com/webfonts/nomal/115733/32780/5c088ffef629d90f04bed861.css' rel='stylesheet'
+    type='text/css' />
+  <link href='http://cdn.webfont.youziku.com/webfonts/nomal/115733/470/5c23bd35f629d80d4cba4177.css' rel='stylesheet'
+    type='text/css' /> -->
+  <title>课堂派</title>
+  <!-- <script src="https://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script> -->
+  <script>
+    // $youziku.load(".jzzyt", "4e23f4da02434196aefdb50aaca28cee", "jingzhizongyiti");
+    // $youziku.draw();
+    var g_rate;
+    (function (win) {
+      var doc = win.document;
+      var docEl = doc.documentElement;
+      var tid;
+
+      function refreshRem() {
+        // var width = docEl.getBoundingClientRect().width;
+        // // var width = 1920;
+        // if (width < 1280) {
+        //   width = 1280;
+        // }
+        // g_rate = width / 1280;
+        // var rem = g_rate * 14;
+        // docEl.style.fontSize = rem + 'px';
+        var whdef = 100/1920;// 表示1920的设计图,使用100PX的默认值
+        var html = document.documentElement;
+        var wW = html.clientWidth;// 窗口宽度
+        if(wW>1600)wW=1600;
+        if(wW<1280)wW=1280;
+        var rem = wW * whdef;// 以默认比例值乘以当前窗口宽度,得到该宽度下的相应FONT-SIZE值
+        document.documentElement.style.fontSize = rem + 'px';
+        document.body.style.fontSize = '16px';
+      }
+
+      win.addEventListener('resize', function () {
+        clearTimeout(tid);
+        tid = setTimeout(refreshRem, 100);
+      }, false);
+
+      win.addEventListener('pageshow', function (e) {
+        if (e.persisted) {
+          clearTimeout(tid);
+          tid = setTimeout(refreshRem, 100);
+        }
+      }, false);
+
+      window.onload = function () {
+        refreshRem();
+      }
+
+    })(window);
+
+  </script>
+</head>
+
+<body>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+  <script>
+    // document.oncontextmenu = function () { return false }
+    // document.onkeydown = function (e) {
+    //   var currKey = 0, evt = e || window.event;
+    //   currKey = evt.keyCode || evt.which || evt.charCode;
+    //   if (currKey == 123) {
+    //     window.event.cancelBubble = true;
+    //     window.event.returnValue = false;
+    //   }
+    // }
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js'></script>
+</body>
+
+</html>
