@@ -12,7 +12,7 @@
   "dependencies": {
     "@tinymce/tinymce-vue": "^2.1.0",
     "jquery": "^3.3.1",
-    "moment": "^2.22.2",
+    "moment": "^2.29.4",
     "vue": "^2.5.2",
     "vue-bus": "^1.2.1",
     "vue-router": "^3.0.1",
